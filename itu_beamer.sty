@@ -7,20 +7,13 @@
 \RequirePackage{helvet}
 
 \def\ITUBeamerVersion{0.1}
-
 \definecolor{beamer@structure@color}{named}{black}
-
-% colours and fonts
-%\usecolortheme{KUhorse}
-%\usefonttheme{KU}
-
-\pgfdeclareimage[height=1.2cm]{logo}{bigitu} 
 
 \defbeamertemplate*{footline}{infolines theme}
 {
-  \leavevmode%
-  \includegraphics[height=0.6cm]{itu_logo_new}\hfill\insertframenumber\phantom{XX}%
-  \vskip1em%
+    \leavevmode%
+    \includegraphics[width=0.2\textwidth]{itu_logo_new}\hfill\insertframenumber\phantom{XX}%
+    \vskip1em%
 }
 
 \defbeamertemplate*{headline}{infolines theme}
@@ -83,11 +76,10 @@
     \end{beamercolorbox}
 }
 
-% Comment this if you want navigation symbols.
+% Comment this if you want navigation symbols
 \defbeamertemplate*{navigation symbols}{customized}
 {%
 }
-
 
 \defbeamertemplate*{frametitle}{customized}[1][left]
 {
@@ -116,9 +108,6 @@
 \setbeamerfont{framesubtitle}{size=\large,parent={frametitle}}
 \setbeamerfont{title}{size=\LARGE,series=\bfseries,parent={frametitle}}
 \setbeamerfont{subtitle}{size=,parent={framesubtitle}}
-
-%\setbeamertemplate{itemize item}{\vspace{15mm}%
-% \textbullet}
 
 \ProcessOptionsBeamer
 
