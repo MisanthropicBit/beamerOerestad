@@ -1,13 +1,24 @@
 % IT University of Copenhagen beamer theme
 \ProvidesPackage{itu_beamer}[2016/08/09]
 
+\RequirePackage[export]{adjustbox}
 \RequirePackage{tikz}
 \RequirePackage{varwidth}
 \RequirePackage[overload]{textcase}
 \RequirePackage{helvet}
 
+\usetikzlibrary{fadings}
+
 \def\ITUBeamerVersion{0.1}
 \definecolor{beamer@structure@color}{named}{black}
+
+\setbeamertemplate{background canvas}{%
+    \ifnum\c@framenumber=1%
+        \begin{tikzpicture}
+            \node[scope fading=east, inner sep=0pt, outer sep=0pt, anchor=north east] at (\paperwidth, \paperheight) {\adjincludegraphics[trim={0 0 {0.7\width} 0}, clip,  height=\paperheight]{itu_interior.jpg}};
+        \end{tikzpicture}
+    \fi%
+}
 
 \defbeamertemplate*{footline}{infolines theme}
 {
@@ -27,8 +38,10 @@
 \setbeamercolor*{palette secondary}{use=structure,fg=black,bg=black}
 \setbeamercolor*{palette tertiary}{use=structure,fg=black,bg=black}
 \setbeamercolor*{frametitle}{use=structure,fg=white,bg=black}
-\setbeamercolor*{author}{use=structure,fg=black,bg=white}
-\setbeamercolor{title}{fg=black!80!white,bg=white!20!white}
+\setbeamercolor*{author}{use=structure,fg=black}
+%\setbeamercolor*{author}{use=structure,fg=black,bg=white}
+\setbeamercolor{title}{fg=black!80!white}
+%\setbeamercolor{title}{fg=black!80!white,bg=white!20!white}
 
 % Blocks
 \setbeamercolor{structure}{fg=black}
